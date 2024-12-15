@@ -7516,7 +7516,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Recommendation-system">Recommendation system<a class="anchor-link" href="#Recommendation-system">¶</a></h1>
+<h1 id="Recommendation-system">Recommendation system<a class="anchor-link" href="#Recommendation-system">¶</a></h1><p>The idea of the project is to predict ratings of unwatched movies  for userId 610 in order to be able to recommend movies to this user</p>
 </div>
 </div>
 </div>
@@ -7665,6 +7665,17 @@ a.anchor-link {
 <p>100836 rows × 4 columns</p>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Transforming-the-dataframe-to-the-convinient-form">Transforming the dataframe to the convinient form<a class="anchor-link" href="#Transforming-the-dataframe-to-the-convinient-form">¶</a></h3>
 </div>
 </div>
 </div>
@@ -8036,7 +8047,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Coorelation-finding-methods">Coorelation finding methods<a class="anchor-link" href="#Coorelation-finding-methods">¶</a></h3>
+<h3 id="Coorelation-finding-methods">Coorelation finding methods<a class="anchor-link" href="#Coorelation-finding-methods">¶</a></h3><p>Here there are the functions used for finding the coorelations between the users basing on the mutual movies that  they have watched</p>
 </div>
 </div>
 </div>
@@ -8048,8 +8059,9 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="sd">'''the coorelation finding method which just finds the pearson coorelation between the user and all users , if they have at least 2 movies in common</span>
-<span class="sd">and if neither user nor other user ratings for common films are constant array '''</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="sd">'''the coorelation finding method which just finds the pearson coorelation between the  given user and all other users , </span>
+<span class="sd">if they have at least 2 movies in common</span>
+<span class="sd">and if neither given user nor other user ratings for common films are constant array '''</span>
 <span class="k">def</span> <span class="nf">find_correlation</span><span class="p">(</span><span class="n">transformed_df</span><span class="p">:</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span><span class="n">userId</span><span class="o">=</span><span class="mi">610</span><span class="p">):</span>
     <span class="n">user_column</span> <span class="o">=</span> <span class="n">transformed_df</span><span class="p">[</span><span class="n">userId</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">user_column</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -8077,7 +8089,8 @@ a.anchor-link {
     <span class="k">return</span> <span class="n">correlation_df</span>
 
 
-<span class="sd">'''the coorelation , however  the coorelation is found only if the user and other user have at least threshold films in common'''</span>
+<span class="sd">'''the coorelation finding function as above,</span>
+<span class="sd"> however  the coorelation is found only if the user and other user have at least threshold films in common'''</span>
 <span class="k">def</span> <span class="nf">find_correlation_with_common_films_threshold</span><span class="p">(</span><span class="n">transformed_df</span><span class="p">:</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span><span class="n">threshold</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">userId</span><span class="o">=</span><span class="mi">610</span><span class="p">):</span>
     <span class="n">user_column</span> <span class="o">=</span> <span class="n">transformed_df</span><span class="p">[</span><span class="n">userId</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">user_column</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -8115,7 +8128,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Movie-recommender-systems">Movie recommender systems<a class="anchor-link" href="#Movie-recommender-systems">¶</a></h3>
+<h3 id="Movie-recommender-systems">Movie recommender systems<a class="anchor-link" href="#Movie-recommender-systems">¶</a></h3><p>Here can be found the different movie recommender systems approaches</p>
 </div>
 </div>
 </div>
@@ -8127,11 +8140,12 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="sd">'''the simplest prediction method, we find up to k most coorelated with our userID users  that have rated given movie </span>
-<span class="sd">and calculate rating for unseen film as a weighted avergae</span>
-<span class="sd">of their ratings for this film. up to k because it may happen that there are less than k users with positive correlation with our userId who watched</span>
-<span class="sd">given movie'''</span>
-<span class="k">def</span> <span class="nf">predict_scores</span><span class="p">(</span><span class="n">transformed_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">userId</span><span class="o">=</span><span class="mi">610</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">split</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">predict_scores</span><span class="p">(</span><span class="n">transformed_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">userId</span><span class="o">=</span><span class="mi">610</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">split</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">'''we find up to k most coorelated users with our userID  that have rated given movie not seen by our userID</span>
+<span class="sd">        and calculate rating  as a weighted average</span>
+<span class="sd">        of their ratings for this film. up to k because it may happen that there are less than k users </span>
+<span class="sd">        with positive correlation with our userId who watched</span>
+<span class="sd">        given movie'''</span>
     <span class="n">transposed_df</span> <span class="o">=</span> <span class="n">transformed_df</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
     <span class="n">user_correlations</span> <span class="o">=</span> <span class="n">find_correlation</span><span class="p">(</span><span class="n">transformed_df</span><span class="p">,</span> <span class="n">userId</span><span class="p">)</span>
     <span class="n">sorted_correlations</span> <span class="o">=</span> <span class="n">user_correlations</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -8157,7 +8171,7 @@ a.anchor-link {
             <span class="n">valid_score</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">weighted_avg</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
             <span class="n">predictions_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">userId</span><span class="p">,</span> <span class="n">movie</span><span class="p">]</span> <span class="o">=</span> <span class="n">valid_score</span>
 
-    <span class="c1"># Transpose back to the original format</span>
+    
     <span class="k">return</span> <span class="n">predictions_df</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
 
 
@@ -8171,8 +8185,8 @@ a.anchor-link {
     <span class="n">split</span><span class="o">=</span><span class="kc">None</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Predict scores using top `k` most correlated users score predicted as mean weighted deviation from the mean </span>
-<span class="sd">    based on the k most correlated users</span>
+<span class="sd">    Predict scores using top `k` most correlated users. Rating for tuple (userId,movie) predicted as mean of ratings for our userID for all movies + </span>
+<span class="sd">    weighted deviation from the mean for given movie of the k most correlated users.</span>
 <span class="sd">    """</span>
     <span class="n">transposed_df</span> <span class="o">=</span> <span class="n">transformed_df</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
     <span class="n">user_correlations</span> <span class="o">=</span> <span class="n">find_correlation</span><span class="p">(</span><span class="n">transformed_df</span><span class="p">,</span> <span class="n">userId</span><span class="p">)</span>
@@ -8216,7 +8230,8 @@ a.anchor-link {
     <span class="n">split</span><span class="o">=</span><span class="kc">None</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    works similar to the predictor aboce, only at the end it may  adjust the  rating basing on the mean rating for given film</span>
+<span class="sd">    works similar to the predictor above, only at the end it adjusts the  rating basing on the mean rating for given film in case</span>
+<span class="sd">    the rating is close to the border of ratings </span>
 <span class="sd">    """</span>
     <span class="n">transposed_df</span> <span class="o">=</span> <span class="n">transformed_df</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
     <span class="n">user_correlations</span> <span class="o">=</span> <span class="n">find_correlation</span><span class="p">(</span><span class="n">transformed_df</span><span class="p">,</span> <span class="n">userId</span><span class="p">)</span>
@@ -8270,7 +8285,7 @@ a.anchor-link {
 <span class="k">def</span> <span class="nf">predict_baseline</span><span class="p">(</span><span class="n">transformed_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">userId</span><span class="o">=</span><span class="mi">610</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">split</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Predict baseline scores for movies the user has not rated.</span>
-<span class="sd">    mean of user ratings of this user and movie ratings for this movie</span>
+<span class="sd">    mean of user ratings of this user + movie ratings for this movie</span>
 <span class="sd">    """</span>
     <span class="n">predictions_df</span> <span class="o">=</span> <span class="n">transformed_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">transformed_df</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
@@ -8303,7 +8318,7 @@ a.anchor-link {
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Predict scores using all correlated users above a specified threshold.</span>
-<span class="sd">    weighted average of these users </span>
+<span class="sd">    weighted average of these users  rating for this film . Weights are the coorelation</span>
 <span class="sd">    </span>
 <span class="sd">    """</span>
     <span class="n">transposed_df</span> <span class="o">=</span> <span class="n">transformed_df</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
@@ -8442,7 +8457,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Evaluation-of-the-performance-of-predicton-methods">Evaluation of the performance of predicton methods<a class="anchor-link" href="#Evaluation-of-the-performance-of-predicton-methods">¶</a></h3>
+<h3 id="Evaluation-of-the-performance-of-predicton-methods">Evaluation of the performance of predicton methods<a class="anchor-link" href="#Evaluation-of-the-performance-of-predicton-methods">¶</a></h3><p>Frameworks for evaluating the recommender systems. All of them are based on the 10-fold cross validation on the userID 610, ensuring the splits are always the same across every run of evaluation methods , so  that the comparison of different recommender systems is plausible.</p>
 </div>
 </div>
 </div>
@@ -8463,7 +8478,7 @@ a.anchor-link {
     <span class="o">**</span><span class="n">predict_function_kwargs</span>  
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    General evaluation function for recommendation quality using Mae.</span>
+<span class="sd">    General evaluation function for recommendation quality using Mae. </span>
 <span class="sd">    """</span>
     <span class="n">original_ratings</span> <span class="o">=</span> <span class="n">transformed_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">userId</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
     <span class="n">rated_movies</span> <span class="o">=</span> <span class="n">original_ratings</span><span class="o">.</span><span class="n">index</span>  
@@ -8581,14 +8596,14 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Description-of-testing">Description of testing<a class="anchor-link" href="#Description-of-testing">¶</a></h3><p>We decided to test several movie recommender systems, which will be duly described in each step, as well as  the conclusions of the results  of the  given  systems. In order to test the predicition accuracy of the system we have devised several different evaluation methods. All of them are basing on the 10-fold  cross validation on the userId 610. It means we run 10 iterations of the reccomender systems, in each giving it 9/10 of the records for userID 610 and all the records for other users and we command it to predict score for the deliberately erased data for userId 610 . We calculate the error and take the mean of the error for the 10 runs. Surely we would get more data if we tried to do the same approach with several other users, but since our task is specifically to predict the ratings for the movies for userId 610 , we base the evaluation only on the algorithms error on this userID. When  creating these splits for 10-fold validation we do not shuffle the data as it is not anyhow sorted byt ratin for the Userid 610 and we would want to always evaluate the recommender systems on the exactly the same splits to compare them as good as possible. as we have  mentioned there are several methods of error evaluations  Mainly:</p>
+<h3 id="Description-of-testing">Description of testing<a class="anchor-link" href="#Description-of-testing">¶</a></h3><p>We decided to test several movie recommender systems, which will be duly described in each step, as well as  the conclusions of the results  of the  given  systems. In order to test the predicition accuracy of the system we have devised several different evaluation methods. All of them are basing on the 10-fold  cross validation on the userId 610. It means we run 10 iterations of the recommender systems, in each giving it 9/10 of the records for userID 610 and all the records for other users and we command it to predict score for the deliberately erased data for userId 610 . We calculate the error and take the mean of the error for the 10 runs. Surely we would get more data if we tried to do the same approach with several other users, but since our task is specifically to predict the ratings for the movies for userId 610 , we base the evaluation only on the algorithms error on this userID. When  creating these splits for 10-fold validation we do not shuffle the data as it is not anyhow sorted byt rating for the Userid 610 and we would want to always evaluate the recommender systems on the exactly same splits to compare them as good as possible. As we have  mentioned there are several methods of error evaluations, mainly:</p>
 <ul>
 <li>MAE , simply the mean absolute error , very easy to interpret measure</li>
 <li>MRSE, the mean root squared error, a good measure for this specific purpose, as it penalizes biggger mistakes more</li>
-<li>Weighted MAE , the idea is that  our user surely will have ceratain preference. The overestimating may be more detrimental to the user (if he is very picky or  doesnt have much time for watchin the movies) then what matters more is the precision of high ratings. On the other hand if the user spends all his day watching films, he probably would not really care  much for the false positive, but on the other hands, he would not want to run out of movie
+<li>Weighted MAE , the idea is that  our user surely will have ceratain preference. The overestimating may be more detrimental to the user (if he is very picky or  doesnt have much time for watching the movies) then what matters more is the precision of high ratings. On the other hand if the user spends all his day watching films, he probably would not really care  much for the false positive, but on the other hand, he would not want to run out of movie
 choices, therefore false negative high rating is bad for him. So to summ up , we do the mae but we set weight to the overestimation error and weight to
-underestimation erorr, and we can alter these weights to see best  systems for high precision in high ratings and best  systems for high recall for high ratings. To have only one type of the error accounted for we will use weights (1,0) and (0,1) so  accounting only for one type of error.</li>
-<li>Lastly we have a mea but only for the k  best rated films . since Surely user may not care that much about the ratings of  the films he wouldnt watch anyway , it is maybe  somehow similar to the previous approach overestimation error, since it would work good for a picky user with small amount of time - he doesnt want to watch some crap, but wont care that much about ratings of films he wont have time to watch anyway.</li>
+underestimation erorr, and we can alter these weights to see best  systems for high precision in high ratings and best  systems for high recall for high ratings. To have only one type of the error accounted for we will use weights (1,0) and (0,1), so  accounting only for one type of error.</li>
+<li>Lastly we have a mea but only for the k  best rated films . Since surely user may not care that much about the ratings of  the films he wouldnt watch anyway , it is maybe  somehow similar to the previous approach overestimation error, since it would work good for a picky user with small amount of time - he doesnt want to watch some crap, but wont care that much about ratings of films he wont have time to watch anyway.</li>
 </ul>
 </div>
 </div>
@@ -8611,7 +8626,10 @@ underestimation erorr, and we can alter these weights to see best  systems for h
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h5 id="remark">remark<a class="anchor-link" href="#remark">¶</a></h5><p>What we have not mentioned explicitly earlier , each system when having final prediction will round it to the closest viable value, because we want to obtain correct prediction in  the given scale i.e  for the ratings.csv from 0.5 to 5 with  intermiadiate ratings every 0.5</p>
+<h5 id="remark">remark<a class="anchor-link" href="#remark">¶</a></h5><ul>
+<li>What we have not mentioned explicitly earlier , each system when having final prediction will round it to the closest viable value, because we want to obtain correct prediction in  the given scale i.e  for the ratings.csv from 0.5 to 5 with change by 0.5</li>
+<li>when referring to the correlation between users, we always refer to the pearson coorelation</li>
+</ul>
 </div>
 </div>
 </div>
@@ -8641,7 +8659,7 @@ underestimation erorr, and we can alter these weights to see best  systems for h
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Baseline-predictor">Baseline predictor<a class="anchor-link" href="#Baseline-predictor">¶</a></h3><p>Firstly we would like to check the performance of the baseline prediction, to have some start to compare with later. The baseline predictor is a very simple approach which  when predicting score for given tuple (movie,userID) returns  mean of all the ratings for given movie + all the ratings for given userID</p>
+<h3 id="Baseline-predictor">Baseline predictor<a class="anchor-link" href="#Baseline-predictor">¶</a></h3><p>Firstly we would like to check the performance of the baseline predictor, to have something to compare with later. The baseline predictor is a very simple approach which  when predicting score for given tuple (movie,userID) returns  mean of all the ratings for given movie + all the ratings for given userID</p>
 </div>
 </div>
 </div>
@@ -8731,7 +8749,7 @@ Underestimate  MAE is 0.5890073252784332
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="conclusions">conclusions<a class="anchor-link" href="#conclusions">¶</a></h4><p>Honestly it does not to perform that terribly in terms of the mae , it can be a not bad very computationaly cheap baseline approach. One another thing is the systems at least for these data, turned out quite biase, overestimating rather then underestimating</p>
+<h4 id="conclusions">conclusions<a class="anchor-link" href="#conclusions">¶</a></h4><p>Honestly it does not  perform that terribly in terms of the mae , it can be a good computationaly cheap start. One thing is that this  system, at least for this data, turned out quite biased, overestimating error is significantly higher than the underestimating error, so it tends to overestimate.</p>
 </div>
 </div>
 </div>
@@ -8742,7 +8760,7 @@ Underestimate  MAE is 0.5890073252784332
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="user-coorelation-approaches">user coorelation approaches<a class="anchor-link" href="#user-coorelation-approaches">¶</a></h3><p>now , as we have something to compare our more sophisticated  recommender systems with , we can start to test them. The first system is a very simple approach it sets the prediction for tuple (userID,movie) as weighted average of ratings for this given movie for users which watched this given movie and had the positive correlation with the given user. we will check several corrrelation threshold  aobe which we include the users to the weighted mean and see which one performs the best</p>
+<h3 id="user-coorelation-approaches">user coorelation approaches<a class="anchor-link" href="#user-coorelation-approaches">¶</a></h3><p>now , as we have something to compare our more sophisticated  recommender systems with , we can start to test them. The first system  sets the prediction for tuple (userID,movie) as weighted average of ratings for  given movie for users which watched  given movie and had the positive correlation with the given user with value of the coorelation above some threshold. we will check several corrrelation thresholds above which we include the users to the weighted mean and see which one performs the best .</p>
 </div>
 </div>
 </div>
@@ -8751,23 +8769,23 @@ Underestimate  MAE is 0.5890073252784332
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [271]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">correlation_threshold</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">]:</span>
         <span class="n">mae</span> <span class="o">=</span> <span class="n">evaluate_recommendation_quality_general</span><span class="p">(</span>
             <span class="n">transformed_df</span><span class="o">=</span><span class="n">transformed_df</span><span class="p">,</span>
             <span class="n">num_splits</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-            <span class="n">predict_function</span><span class="o">=</span><span class="n">predict_scores_with_threshold</span><span class="p">,</span>  <span class="c1"># Function to predict scores</span>
+            <span class="n">predict_function</span><span class="o">=</span><span class="n">predict_scores_with_threshold</span><span class="p">,</span>
             <span class="n">userId</span><span class="o">=</span><span class="mi">610</span><span class="p">,</span>
-            <span class="n">threshold</span><span class="o">=</span><span class="n">correlation_threshold</span> <span class="c1"># Pass the threshold as a keyword argument</span>
+            <span class="n">threshold</span><span class="o">=</span><span class="n">correlation_threshold</span> 
         <span class="p">)</span>
         <span class="n">rmse</span> <span class="o">=</span> <span class="n">evaluate_recommendation_quality_rmse_general</span><span class="p">(</span>
                 <span class="n">transformed_df</span><span class="o">=</span><span class="n">transformed_df</span><span class="p">,</span>
-                <span class="n">predict_function</span><span class="o">=</span><span class="n">predict_scores_with_threshold</span><span class="p">,</span>  <span class="c1"># Function to predict scores</span>
+                <span class="n">predict_function</span><span class="o">=</span><span class="n">predict_scores_with_threshold</span><span class="p">,</span>  
                 <span class="n">userId</span><span class="o">=</span><span class="mi">610</span><span class="p">,</span>
                 <span class="n">num_splits</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-                <span class="n">threshold</span><span class="o">=</span><span class="n">correlation_threshold</span> <span class="c1"># Pass the threshold as a keyword argument</span>
+                <span class="n">threshold</span><span class="o">=</span><span class="n">correlation_threshold</span> 
             <span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"MAE using </span><span class="si">{</span><span class="n">correlation_threshold</span><span class="si">}</span><span class="s2"> positive coorelation threshold </span><span class="si">{</span><span class="n">mae</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="n">mae_list</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="sa">f</span><span class="s2">"MAE using </span><span class="si">{</span><span class="n">correlation_threshold</span><span class="si">}</span><span class="s2">% positive coorelation threshold"</span><span class="p">,</span><span class="n">mae</span><span class="p">))</span>
@@ -8779,9 +8797,9 @@ Underestimate  MAE is 0.5890073252784332
                 <span class="n">p</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
                 <span class="n">transformed_df</span><span class="o">=</span><span class="n">transformed_df</span><span class="p">,</span>
                 <span class="n">num_splits</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-                <span class="n">predict_function</span><span class="o">=</span><span class="n">predict_scores_with_threshold</span><span class="p">,</span>  <span class="c1"># Function to predict scores</span>
+                <span class="n">predict_function</span><span class="o">=</span><span class="n">predict_scores_with_threshold</span><span class="p">,</span>  
                 <span class="n">userId</span><span class="o">=</span><span class="mi">610</span><span class="p">,</span>
-                <span class="n">threshold</span><span class="o">=</span><span class="n">correlation_threshold</span> <span class="c1"># Pass the threshold as a keyword argument</span>
+                <span class="n">threshold</span><span class="o">=</span><span class="n">correlation_threshold</span> 
             <span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Mae at p=10 using </span><span class="si">{</span><span class="n">correlation_threshold</span><span class="si">}</span><span class="s2">% positive coorelation threshold </span><span class="si">{</span><span class="n">p_error</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="n">perror_list</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="sa">f</span><span class="s2">"Mae at p=10 using </span><span class="si">{</span><span class="n">correlation_threshold</span><span class="si">}</span><span class="s2"> positive coorelation threshold"</span><span class="p">,</span><span class="n">p_error</span><span class="p">))</span>
@@ -8792,8 +8810,8 @@ Underestimate  MAE is 0.5890073252784332
                 <span class="n">weight_over</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
                 <span class="n">userId</span><span class="o">=</span><span class="mi">610</span><span class="p">,</span>
                 <span class="n">num_splits</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-                <span class="n">predict_function</span><span class="o">=</span><span class="n">predict_scores_with_threshold</span><span class="p">,</span>  <span class="c1"># Function to predict scores</span>
-                <span class="n">threshold</span><span class="o">=</span><span class="n">correlation_threshold</span> <span class="c1"># Pass the threshold as a keyword argument</span>
+                <span class="n">predict_function</span><span class="o">=</span><span class="n">predict_scores_with_threshold</span><span class="p">,</span>  
+                <span class="n">threshold</span><span class="o">=</span><span class="n">correlation_threshold</span> 
             <span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Overestimate MAE is </span><span class="si">{</span><span class="n">overestimate_error</span><span class="si">}</span><span class="s2"> "</span><span class="p">)</span>
         <span class="n">overestimate_error_list</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="sa">f</span><span class="s2">"Overestimate Mae using  </span><span class="si">{</span><span class="n">correlation_threshold</span><span class="si">}</span><span class="s2">% positive coorelation threshold"</span><span class="p">,</span><span class="n">overestimate_error</span><span class="p">))</span>
@@ -8802,10 +8820,10 @@ Underestimate  MAE is 0.5890073252784332
                 <span class="n">transformed_df</span><span class="o">=</span><span class="n">transformed_df</span><span class="p">,</span>
                 <span class="n">weight_under</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                 <span class="n">weight_over</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-                <span class="n">predict_function</span><span class="o">=</span><span class="n">predict_scores_with_threshold</span><span class="p">,</span>  <span class="c1"># Function to predict scores</span>
+                <span class="n">predict_function</span><span class="o">=</span><span class="n">predict_scores_with_threshold</span><span class="p">,</span>  
                 <span class="n">userId</span><span class="o">=</span><span class="mi">610</span><span class="p">,</span>
                 <span class="n">num_splits</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-                <span class="n">threshold</span><span class="o">=</span><span class="n">correlation_threshold</span> <span class="c1"># Pass the threshold as a keyword argument</span>
+                <span class="n">threshold</span><span class="o">=</span><span class="n">correlation_threshold</span> 
             <span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"underestimate_error using </span><span class="si">{</span><span class="n">correlation_threshold</span><span class="si">}</span><span class="s2">% positive coorelation threshold </span><span class="si">{</span><span class="n">underestimate_error</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="n">underestimate_error_list</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="sa">f</span><span class="s2">"p_error using </span><span class="si">{</span><span class="n">correlation_threshold</span><span class="si">}</span><span class="s2">% positive coorelation threshold"</span><span class="p">,</span><span class="n">underestimate_error</span><span class="p">))</span>
@@ -8853,8 +8871,8 @@ underestimate_error using 0.6% positive coorelation threshold 0.6739252769765453
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="conclusions">conclusions<a class="anchor-link" href="#conclusions">¶</a></h4><p>It has some advantage to the baseline approach however the difference considering mae is not staggering really ~10% only. The Rmse decreasing even by lower percentage. However  the predictions are difnitely more balanced, i.e the difference between the underestimation_error and over_estimation_error is neglibile in comparison to what it was previously.  Moreover the error at p=10 best ratings decreases visibly, what might be important  in reall recommender systems since, these are the  movies the user would watch if he was to choose by rating.
-Interestingly in this case it seems in nearly all metrics,  taking all positively correlated users proved to give the best effects. And creating the score only basing on users with positive coorelation &gt; 0.6 could even proved detrimental in comparison to the basline approach as the Rmse there is bigger here! It could be probably casued by the scarcity of data, the best coorelation because for example only 3 films in common were watched</p>
+<h4 id="conclusions">conclusions<a class="anchor-link" href="#conclusions">¶</a></h4><p>It has some advantages compared  to the baseline approach , however the difference considering mae is not staggering, about ~10% . The Rmse is  decreasing even by lower percentage. However  the predictions are definitely more balanced, i.e the difference between the underestimation_error and over_estimation_error is neglibile in comparison to what it was previously.  Moreover the error at p=10 best ratings decreases visibly, what might be important  in reall recommender systems since, these are the  movies the user would watch if he was to choose by predicted rating.
+Interestingly, in this case in nearly all metrics,  setting threshold to 0 therefore taking all positively correlated users proved to give the best effects. On the other hand creating the score only basing on users with positive coorelation &gt; 0.6 could even be worse than the basline approach as the Rmse is bigger here! It could be probably casued by the scarcity of data, as it could occur that these users with high coorelation had for example only 3 films in common with our userId 610 , therefore were not very 'reliable' source of information</p>
 </div>
 </div>
 </div>
@@ -8865,7 +8883,7 @@ Interestingly in this case it seems in nearly all metrics,  taking all positivel
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="using-the-negatively-coorelated">using the negatively coorelated<a class="anchor-link" href="#using-the-negatively-coorelated">¶</a></h3><p>since we do not suffer from abundance of data, it would be great to take adventage of the users which are negatively coorelated to the current user. There is plenty of such  users and we devised an algorithm which can do that. Mainly we will use the positive coorelation as in the previous function, but then we will also check for the negatively coorelated users with the magnitude of the coorelation above some threshold. i.e we want to have storngly negatively coorelated users. Then we  incorporate them in the weighted avergae , but in doing so , we do not take their ratings as they are, but we change them to rating = 6-rating. Why? because since the relation is negative, if these users rated  given film high, we xepect our user to rate it low , so in other words we create sort of a complement of a rating. Also we do that only  for ratings of strongly negatively correalated users in range (0,2&gt; and &lt;4,5&gt;) since for example  if we have storngly negatively correlated user who give 3 for some movie , we would have to give our use alos 3 -&gt;6-3 = 3 , but it seems it shall not work this way</p>
+<h3 id="using-the-negatively-coorelated">using the negatively coorelated<a class="anchor-link" href="#using-the-negatively-coorelated">¶</a></h3><p>since we do not suffer from abundance of data, it would be great to take adventage of the users which are negatively coorelated to the current user. There is plenty of such  users and we devised an algorithm which can do that. Mainly we will use the positive coorelation as in the previous function, but then we will also check for the negatively coorelated users with the magnitude of the coorelation above some threshold. i.e we want to have strongly negatively coorelated users. Then we  incorporate them in the weighted average , but in doing so , we do not take their ratings as they are, but we change them to rating = 6-rating. Why? because since the relation is negative, if these users rated  given film high, we expect our user to rate it low , so in other words we create sort of a complement of a rating. Also we do that only  for ratings of strongly negatively correalated users in range (0,2&gt; and &lt;4,5&gt;) since for example  if we have strongly negatively correlated user who give 3 for some movie , we would have to give our use also 3 -&gt;6-3 = 3 , but it seems it shall not work this way</p>
 </div>
 </div>
 </div>
@@ -8987,7 +9005,7 @@ underestimate_error using 0% positive and  0.6%  negative  coorelation threshold
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="fixed-neighbourhood-size-of-k-most-similar-neighbours">fixed neighbourhood size of k most similar neighbours<a class="anchor-link" href="#fixed-neighbourhood-size-of-k-most-similar-neighbours">¶</a></h3><p>The idea with the negative coorelations didnt really work therefore  we want to further explore the user-based rating prediction basing on the positively coorelated users, hovever this time we wont take all above some threshold but instead the k most simialr users with our UserId and we will , have the weighted avergae created of them.</p>
+<h3 id="fixed-neighbourhood-size-of-k-most-similar-neighbours">fixed neighbourhood size of k most similar neighbours<a class="anchor-link" href="#fixed-neighbourhood-size-of-k-most-similar-neighbours">¶</a></h3><p>The idea with the negative coorelations didnt really work therefore  we want to further explore the user-based rating prediction basing on the positively coorelated users, hovever this time we wont take all users above some threshold but instead the k most similar users with our UserId and we will create the weighted average of them</p>
 </div>
 </div>
 </div>
@@ -9099,7 +9117,7 @@ underestimate_error using  50 strongest positively coorelated neighbours  0.5726
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="conclusions">conclusions<a class="anchor-link" href="#conclusions">¶</a></h4><p>It seems to have yielded more promising results than the previous idea of the negative coorelations incorporation. However the improvements are not anyhow staggering. The RMSE did not improve in comparison to taking all positively coorelated users , however the mae and mae at p=10  have now improved , but it also depends on the size of the neighbourhood, so this parameter must be choosens aptly. Overall the best performance have been achieved with 25 most simialr users. Unfortunately, maybe due to taking less amount of data into consideration when predictiong rating for each film , the overestimation_error and underestimation error differ, the algorithm tends to overestimate , what could also be beneficial depending on the purpose but we were not expect it there.</p>
+<h4 id="conclusions">conclusions<a class="anchor-link" href="#conclusions">¶</a></h4><p>It seems to have yielded more promising results than the previous idea of the negative coorelations incorporation. However the improvements are not anyhow staggering. The RMSE did not improve in comparison to taking all positively coorelated users , however the mae and mae at p=10  have now improved , but it also depends on the size of the neighbourhood, so this parameter must be choosen wisely. Overall the best performance have been achieved with 25 most similar users. Unfortunately, maybe due to taking less amount of data into consideration when predictiong rating for each film , the overestimation_error and underestimation error differ quite a lot -the algorithm tends to overestimate , it  could also be beneficial for a user who has a lot of time for watching movies and would not mind some false positive high ratings, but in general it is not the best outcome.</p>
 </div>
 </div>
 </div>
@@ -9209,7 +9227,7 @@ underestimate_error using  50 strongest positively coorelated neighbours account
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="conclusions">conclusions<a class="anchor-link" href="#conclusions">¶</a></h4><p>And it turned to be a very good idea, the mae decrease visibly, but the RMse decreased significantly from the previous best of around 0.79 to 0.68 now. The overestimate_error and underestimate error are very similar and significantly lower than they used to be what is also a very good outcome. The error at 10 best ratings also decreaed, but only a tinge in comparison to its previous best value. Generally this idea seeme to perform the best so far, as it minimizes the error in all the metrics, yielding it not only good but also versatile</p>
+<h4 id="conclusions">conclusions<a class="anchor-link" href="#conclusions">¶</a></h4><p>And it turned to be a very good idea, the mae decreased visibly and the RMse decreased  even more significantly from the previous best of around 0.79 to 0.68 now. The overestimate_error and underestimate error are very similar and significantly lower than they used to be what is also a very good outcome. The error at 10 best ratings also decreased, but only a tinge in comparison to its previous best value. Generally this idea seem to perform the best so far, as it minimizes the error in all the metrics, yielding it not only good but also versatile approach</p>
 </div>
 </div>
 </div>
@@ -9220,7 +9238,7 @@ underestimate_error using  50 strongest positively coorelated neighbours account
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Item-analysis">Item analysis<a class="anchor-link" href="#Item-analysis">¶</a></h3><p>Lastly , why dont we analyze the items as well to improve our algorithm, the idea is that we do virtually the same as in the previous algorithm , however at the end of calculating this weighted deviation for our (userId,movie) tupple, we check if the score was equivocal, i.e if the score was close to the demarcation line of change for example , lets say average says 3.2  then it would be rounded to 3 because only values from 3.25 to 3.5  are rounded to 3.5 but on the other hand is also quite close to 3.5. In this case we check for the mean value for this item(movie) if it is above 3.5 we set our average to 3.5. Analogously we can round down with this approach. It seems as a great idea, because it adds to the algorithm in the places where the user behaviour analysis is very torn between two ratings. Also it add the aspec of the analysis of the items per se, not only the users behaviour.</p>
+<h3 id="Item-analysis">Item analysis<a class="anchor-link" href="#Item-analysis">¶</a></h3><p>Lastly , why dont we analyze the items as well to improve our algorithm, the idea is that we do virtually the same as in the previous algorithm , however at the end of calculating this weighted deviation for our (userId,movie) tupple, we check if the score was equivocal, i.e if the score was close to the  line of change , to clarify lets think about an example: lets say average weighted score says 3.2  then it would be rounded to 3 because this is the closest viable rating to the result, but on the other hand is also not that far from 3.5  .In this case we check for the mean value for this item(movie) if it is above 3.5 we set our average to 3.5. Analogously we can round down with this approach. It seems  a great idea because it adds the item analysis aspect to the algorithm in the places where the user behaviour analysis is  torn between two ratings.</p>
 </div>
 </div>
 </div>
@@ -9315,7 +9333,7 @@ underestimate_error using  25 strongest positively coorelated neighbours account
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="conclusions">conclusions<a class="anchor-link" href="#conclusions">¶</a></h4><p>The difference in comparison to the previous method is not very visible. The mae is slightly better here, hoever on the other hand the RMse is slightly  worse also the mae at 10 best ratings is slightly worse. The underestimate_error is low as never before, meaning this system highlt overestimates, and probably woudl be the best choices for user not being very picky but wanting to have a broad set of nice rated films to watch. In general the idea seem quite interesting but probably it requires more testing in order for it to make difference</p>
+<h4 id="conclusions">conclusions<a class="anchor-link" href="#conclusions">¶</a></h4><p>The difference in comparison to the previous method is not very striking. The mae is slightly better here, however on the other hand the RMse is slightly  worse , also the mae at 10 best ratings is slightly worse. The underestimate_error is low as never before, meaning this system tends to  overestimate, and probably would be the best choices for user not being very picky but wanting to have a broad set of nice rated films to watch. In general the idea seem quite interesting but probably it requires more testing in order for it to make a good difference</p>
 </div>
 </div>
 </div>
@@ -9413,10 +9431,10 @@ overestimate error scores:
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <ul>
 <li>We believe that we tested pretty throughly several recommender system approaches, often building up one on the base of another .
-and the main conclusion is that the system basing on the weighted average of deviation from means for 25 most correlated users performs the best .It is definitely the most versatile, performs good in all metrics, and also is simply the best for some metrics, for example MRSE- an important measure for this problem.</li>
-<li>Additionaly, The item analysis is a very promising idea , because already here a simple approach with conflict resolutions basing on the mean for the given movie  used in case the weighted average of users gave equivocal score , proved promising . So probably after more work and testing better results could be achieved using item-based recommender system combined with user-based. Regarding this issue, we have also tried to combine the user-base recommender based on correlation with the item-based recommender based on cosine-similarity between movies. However it turned out to be even more computationaly expensive than the user based recommender systems therefore we decided to resign of that.</li>
-<li>The baseline approach , very simple and cheap system, seems not to perform that bad in terms of mae. But for other, maybe more informative measures , it is clearly worse. Still it is not a bad idea to use it for comparison or as a base for predictions as it is not worse  by 'order of magnitude' than the other more sophisticated approaches</li>
-<li>Our approach to make use of the negatively coorelated users did not succed. Maybe the idea behind the algorithm, despite looking resonable,  was in fact invalid . Introducing this idea in our systems did only decrease score in all the metrics, However it may be only the invalid logic not using the negative coorelation per se.</li>
+The main conclusion is that the system basing on the weighted average of deviation from means for 25 most correlated users performs the best .It is definitely the most versatile, performs good in all metrics, and also is simply the best for some metrics, for example MRSE - which is an important measure for this problem.</li>
+<li>Additionaly, The item analysis is a very promising idea , because already here a simple approach with conflict resolutions basing on the mean for the given movie  used in case the weighted average of users gave equivocal score , proved promising . So probably after more work and testing some better results could be achieved using item-based recommender system combined with user-based. Regarding this matter, we have also tried to combine the user-based recommender based on correlation with the item-based recommender based on cosine-similarity between movies. However it turned out to be even more computationaly expensive than the user based recommender systems therefore we decided to resign of that.</li>
+<li>The baseline approach , very simple and cheap system, seems not to perform that bad in terms of mae. But for other, maybe more informative measures , it is clearly worse. Still it is not a bad idea to use it for comparison or as a baseline for predictions as it is not worse  by 'order of magnitude' than the other more sophisticated approaches</li>
+<li>Our approach to make use of the negatively coorelated users did not succed. Maybe the idea behind the algorithm, despite looking resonable,  was in fact invalid . Introducing this idea in our systems did only worsen performance in all of the metrics, However it may be only the issue of  invalid logic not issue of using the negative coorelation per se.</li>
 </ul>
 </div>
 </div>
